@@ -3,10 +3,35 @@
   <head>
     <meta charset='utf-8'>
     <script src='main.js' type='module'></script>
-    <style>body { font-family: Arial, sans-serif; margin: 0; }</style>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; }
+      #screen_capture {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 10;
+      }
+      #threshold_controls {
+        position: fixed;
+        top: 56px;
+        left: 16px;
+        z-index: 10;
+        padding: 8px 10px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+      #seed_threshold {
+        width: 180px;
+      }
+    </style>
     <link rel='shortcut icon' href='data:image/x-icon;,' type='image/x-icon'> 
   </head>
   <body>
+    <button id='screen_capture' type='button'>screen_capture</button>
+    <label id='threshold_controls' for='seed_threshold'>
+      threshold
+      <input id='seed_threshold' type='range' min='0' max='1' step='0.01' value='0.5'>
+      <span id='seed_threshold_value'>0.50</span>
+    </label>
     <canvas></canvas>
   </body>
 </html>

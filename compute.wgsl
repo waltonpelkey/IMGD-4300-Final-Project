@@ -4,7 +4,9 @@
 
 fn index( x:i32, y:i32 ) -> u32 {
   let _res = vec2i(res);
-  return u32( (y % _res.y) * _res.x + ( x % _res.x ) );
+  let wrapped_x = ( x + _res.x ) % _res.x;
+  let wrapped_y = ( y + _res.y ) % _res.y;
+  return u32( wrapped_y * _res.x + wrapped_x );
 }
 
 @compute

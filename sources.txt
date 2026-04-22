@@ -1,0 +1,1 @@
+Greyscale using light values: https://www.dynamsoft.com/blog/insights/image-processing/image-processing-101-color-space-conversion/#:~:text=There%20are%20a%20number%20of%20methods%20for,green%2C%20and%20blue%20according%20to%20their%20wavelengths.
