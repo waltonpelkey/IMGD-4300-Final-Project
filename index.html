@@ -1,37 +1,42 @@
 <!doctype html>
 <html lang='en'>
-  <head>
-    <meta charset='utf-8'>
-    <script src='main.js' type='module'></script>
-    <style>
-      body { font-family: Arial, sans-serif; margin: 0; }
-      #screen_capture {
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        z-index: 10;
-      }
-      #threshold_controls {
-        position: fixed;
-        top: 56px;
-        left: 16px;
-        z-index: 10;
-        padding: 8px 10px;
-        background: rgba(255, 255, 255, 0.9);
-      }
-      #seed_threshold {
-        width: 180px;
-      }
-    </style>
-    <link rel='shortcut icon' href='data:image/x-icon;,' type='image/x-icon'> 
-  </head>
-  <body>
-    <button id='screen_capture' type='button'>screen_capture</button>
-    <label id='threshold_controls' for='seed_threshold'>
-      threshold
+
+<head>
+  <meta charset='utf-8'>
+  <script src='main.js' type='module'></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel='shortcut icon' href='data:image/x-icon;,' type='image/x-icon'>
+</head>
+
+<body>
+  <div id="controls">
+    <button id='screen_capture' type='button'>screen capture</button>
+    <button id='reseed' type='button'>reseed</button>
+    <label id='threshold_controls' class='control-card' for='seed_threshold'>
+      <span class='control-label'>light level threshold</span>
       <input id='seed_threshold' type='range' min='0' max='1' step='0.01' value='0.5'>
       <span id='seed_threshold_value'>0.50</span>
+      <span class='control-label'>neighbor reach</span>
+      <input id='neighbor_reach' type='range' min='1' max='4' step='1' value='1'>
+      <span id='neighbor_reach_value'>1</span>
     </label>
-    <canvas></canvas>
-  </body>
+    <label class='control-card' for='preset_values'>
+      <span class='control-label'>Preset values</span>
+      <select id='preset_values'>
+        <option value="day_and_night">day_and_night</option>
+        <option value="randomized">randomized</option>
+        <option value="game_of_life">game of life</option>
+        <option value="custom">custom</option>
+      </select>
+    </label>
+    <button id='randomize_again' type='button' hidden>randomize again</button>
+    <section id='neighbor_controls' class='control-card' aria-labelledby='neighbor_controls_title' hidden>
+      <h2 id='neighbor_controls_title'>Neighbor rules</h2>
+      <div id='neighbor_rule_inputs' class='neighbor-grid'></div>
+    </section>
+  </div>
+
+  <canvas></canvas>
+</body>
+
 </html>
