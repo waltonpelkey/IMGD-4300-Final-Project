@@ -5,6 +5,7 @@
 
 @fragment
 fn fs(@builtin(position) pos: vec4f) -> @location(0) vec4f {
+  // color black or white based on light levels
   let uv = pos.xy / res;
   let color = textureSampleBaseClampToEdge(video_frame, video_sampler, uv);
   let lightness = color.r * 0.299 + color.g * 0.587 + color.b * 0.114;

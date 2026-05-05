@@ -68,7 +68,9 @@ body {
 
 #controls select,
 #controls button,
-#seed_threshold {
+#seed_threshold,
+#neighbor_reach,
+#simulation_speed {
     width: 100%;
     box-sizing: border-box;
 }
@@ -82,12 +84,15 @@ body {
     font: inherit;
 }
 
-#seed_threshold {
+#seed_threshold,
+#neighbor_reach,
+#simulation_speed {
     margin: 0;
 }
 
 #seed_threshold_value,
-#neighbor_reach_value {
+#neighbor_reach_value,
+#simulation_speed_value {
     font-variant-numeric: tabular-nums;
     color: #475569;
 }
