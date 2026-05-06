@@ -1,4 +1,4 @@
-import { default as seagulls } from '/gulls.js'
+import { default as seagulls } from './gulls.js'
 import { default as Video } from './video.js'
 
 // Import the shaders used and other consts
